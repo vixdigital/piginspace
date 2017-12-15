@@ -15,23 +15,68 @@
         <link href="website/assets/css/custom/app.css" rel="stylesheet">
     </head>
     <body>
+
+        <div class="panelCon">
+            <div id="pane-5" class="panel">
+                <p>Pig In Outer Space</p>
+                <p>Bacon ipsum dolor amet shoulder swine meatball frankfurter turkey strip steak pastrami meatloaf buffalo salami chuck corned beef kielbasa. Picanha turducken ham hock landjaeger shankle tri-tip. Sausage landjaeger salami doner picanha chicken porchetta frankfurter. Chuck burgdoggen jerky tongue ribeye spare ribs tenderloin salami landjaeger sausage ground round chicken. Shankle sausage sirloin doner strip steak porchetta. Kevin leberkas pastrami, pancetta kielbasa capicola ball tip beef biltong rump short ribs shank.</p>
+            </div>
+            <div id="pane-4" class="panel">
+                <p>Pig In Space</p>
+                <p>Bacon ipsum dolor amet shoulder swine meatball frankfurter turkey strip steak pastrami meatloaf buffalo salami chuck corned beef kielbasa. Picanha turducken ham hock landjaeger shankle tri-tip. Sausage landjaeger salami doner picanha chicken porchetta frankfurter. Chuck burgdoggen jerky tongue ribeye spare ribs tenderloin salami landjaeger sausage ground round chicken. Shankle sausage sirloin doner strip steak porchetta. Kevin leberkas pastrami, pancetta kielbasa capicola ball tip beef biltong rump short ribs shank.</p>
+            </div>
+            <div id="pane-3" class="panel">
+                <p>Pig In the Sky</p>
+                <p>Bacon ipsum dolor amet shoulder swine meatball frankfurter turkey strip steak pastrami meatloaf buffalo salami chuck corned beef kielbasa. Picanha turducken ham hock landjaeger shankle tri-tip. Sausage landjaeger salami doner picanha chicken porchetta frankfurter. Chuck burgdoggen jerky tongue ribeye spare ribs tenderloin salami landjaeger sausage ground round chicken. Shankle sausage sirloin doner strip steak porchetta. Kevin leberkas pastrami, pancetta kielbasa capicola ball tip beef biltong rump short ribs shank.</p>
+            </div>
+            <div id="pane-2" class="panel">
+                <p>Pig Set Off</p>
+                <p>Bacon ipsum dolor amet shoulder swine meatball frankfurter turkey strip steak pastrami meatloaf buffalo salami chuck corned beef kielbasa. Picanha turducken ham hock landjaeger shankle tri-tip. Sausage landjaeger salami doner picanha chicken porchetta frankfurter. Chuck burgdoggen jerky tongue ribeye spare ribs tenderloin salami landjaeger sausage ground round chicken. Shankle sausage sirloin doner strip steak porchetta. Kevin leberkas pastrami, pancetta kielbasa capicola ball tip beef biltong rump short ribs shank.</p>
+                <img class="damo" src="website/assets/images/damo_in_space.jpg"
+                    data-start="transform:translate(190vw, 23vh);"
+                    data-800="transform:translate(-50vw, 23vh);"
+                >
+            </div>
+            <div id="pane-1" class="panel">
+                <div class="container">
+                    <p>Pig On Land</p>
+                    <p>Bacon ipsum dolor amet shoulder swine meatball frankfurter turkey strip steak pastrami meatloaf buffalo salami chuck corned beef kielbasa. Picanha turducken ham hock landjaeger shankle tri-tip. Sausage landjaeger salami doner picanha chicken porchetta frankfurter. Chuck burgdoggen jerky tongue ribeye spare ribs tenderloin salami landjaeger sausage ground round chicken. Shankle sausage sirloin doner strip steak porchetta. Kevin leberkas pastrami, pancetta kielbasa capicola ball tip beef biltong rump short ribs shank.</p>
+                </div>
+            </div>
+        </div>
+
+         <!-- Control Panel -->
+         <div class="fixed-bottom">
+            <div class="control-panel">
+                <div class="container">
+                    <p>control panel</p>
+                </div>  
+            </div>
+        </div>
     
-
-    <div class="container">
-        <h2>Pig in Space</h2>
-        
-        <p>That's one small step for pig, one giant leap for pigkind.</p>
-
-    </div>
-    
-
-
-       
         <!-- Additional Scripts -->
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> 
+        <script src="website/assets/js/vendor/skrollr.min.js"></script>
+        <script type="text/javascript">
+            var s = skrollr.init();
+        </script>
+        <script>
+            var winHeight = $(window).innerHeight();
+            $(document).ready(function () {
+                $(".panel").height(winHeight);
+                $("body").height(winHeight*$(".panel").length);
+            });
+            
+            window.addEventListener('resize', function (event) {
+                $(".panel").height($(window).innerHeight());
+            });
+            $(window).on('scroll',function(){
+                $(".panelCon").css('bottom',$(window).scrollTop()*-1);
+            });
+        </script>
     </body>
 </html>
